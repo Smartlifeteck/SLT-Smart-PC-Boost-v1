@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "SLT Smart PC Boost"
+message: "If you use SLT Smart PC Boost in technical training, IT workflows, or educational documentation, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: "Babar"
+    given-names: "Shahzad"
+    affiliation: "Smart Life Teck (SLT)"
+    email: "smartlifeteck@gmail.com"
+version: "1.0.0"
+date-released: "2026-11-18"
+license: "MIT"
+url: "https://www.smartlifeteck.com"
+keywords:
+  - "windows"
+  - "powershell"
+  - "wpf"
+  - "pc-diagnostics"
+  - "hardware-qc"
+  - "system-maintenance"
+  - "open-source"
+  - "educational-toolkit"
+abstract: "An open-source, safety-first Windows 10/11 desktop toolkit built with PowerShell 5.1 and WPF for hardware quality-control inspection, curated software management, reversible system optimization, and IT technician training."

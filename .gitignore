@@ -1,0 +1,34 @@
+# Local runtime state and logs
+Logs/
+State/
+*.log
+*.tmp
+*.bak
+*.restored
+STARTUP_DIAGNOSTIC.txt
+STARTUP_ERROR.txt
+STARTUP_ERROR_*.txt
+HardwareLock.json
+Unattend_*.xml
+SLT_A4_Report_Preview.html
+
+# Generated reports and Windows image artifacts
+Preflight_*.json
+SLT_QC_*.html
+SLT_Customer_Inspection_Report_*.xlsx
+*.wim
+*.esd
+*.iso
+*.vhd
+*.vhdx
+
+# Generated launcher artifacts
+SMART PC BOOST.exe
+*.lnk
+
+# Editors / OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

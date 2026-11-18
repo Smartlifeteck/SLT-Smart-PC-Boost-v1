@@ -1,0 +1,213 @@
+﻿{
+  "description": "Safe Windows Bloatware applications that can be safely removed to speed up PC.",
+  "apps": [
+    {
+      "name": "Clipchamp Video Editor",
+      "appx_pattern": "clipchamp",
+      "friendly_name": "Clipchamp Video Editor",
+      "winget_id": "Clipchamp.Clipchamp",
+      "size_mb": 45,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Xbox App & Game Bar",
+      "appx_pattern": "xbox",
+      "friendly_name": "Xbox App & Game Bar",
+      "winget_id": "Microsoft.GamingApp",
+      "size_mb": 95,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Microsoft Solitaire Collection",
+      "appx_pattern": "solitaire",
+      "friendly_name": "Microsoft Solitaire Collection",
+      "winget_id": "Microsoft.MicrosoftSolitaireCollection",
+      "size_mb": 50,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Mixed Reality Portal",
+      "appx_pattern": "mixedreality",
+      "friendly_name": "Mixed Reality Portal",
+      "winget_id": "Microsoft.MixedReality.Portal",
+      "size_mb": 35,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Microsoft People",
+      "appx_pattern": "microsoft.people",
+      "friendly_name": "Microsoft People",
+      "winget_id": "Microsoft.People",
+      "size_mb": 30,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Windows Maps",
+      "appx_pattern": "windowsmaps",
+      "friendly_name": "Windows Maps",
+      "winget_id": "Microsoft.WindowsMaps",
+      "size_mb": 40,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Cortana",
+      "appx_pattern": "cortana",
+      "friendly_name": "Cortana",
+      "winget_id": "Microsoft.549981C3F5F10",
+      "size_mb": 25,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Microsoft Get Help",
+      "appx_pattern": "gethelp",
+      "friendly_name": "Microsoft Get Help",
+      "winget_id": "Microsoft.GetHelp",
+      "size_mb": 20,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Microsoft Tips",
+      "appx_pattern": "getstarted",
+      "friendly_name": "Microsoft Tips (Get Started)",
+      "winget_id": "Microsoft.Getstarted",
+      "size_mb": 20,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "MSN Weather",
+      "appx_pattern": "bingweather",
+      "friendly_name": "MSN Weather",
+      "winget_id": "Microsoft.BingWeather",
+      "size_mb": 30,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Microsoft News",
+      "appx_pattern": "bingnews",
+      "friendly_name": "Microsoft News",
+      "winget_id": "Microsoft.BingNews",
+      "size_mb": 35,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Microsoft Office Hub",
+      "appx_pattern": "microsoftofficehub",
+      "friendly_name": "Microsoft 365 Hub (Office Hub)",
+      "winget_id": "Microsoft.MicrosoftOfficeHub",
+      "size_mb": 30,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Paint 3D",
+      "appx_pattern": "mspaint",
+      "friendly_name": "Paint 3D",
+      "winget_id": "Microsoft.MSPaint",
+      "size_mb": 65,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "3D Viewer",
+      "appx_pattern": "3dviewer",
+      "friendly_name": "3D Viewer",
+      "winget_id": "Microsoft.Microsoft3DViewer",
+      "size_mb": 45,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Skype",
+      "appx_pattern": "skypeapp",
+      "friendly_name": "Skype App",
+      "winget_id": "Microsoft.SkypeApp",
+      "size_mb": 85,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Media Player (ZuneMusic)",
+      "appx_pattern": "zunemusic",
+      "friendly_name": "Windows Media Player / Groove Music",
+      "winget_id": "Microsoft.ZuneMusic",
+      "size_mb": 50,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Movies and TV (ZuneVideo)",
+      "appx_pattern": "zunevideo",
+      "friendly_name": "Movies & TV",
+      "winget_id": "Microsoft.ZuneVideo",
+      "size_mb": 45,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Feedback Hub",
+      "appx_pattern": "windowsfeedbackhub",
+      "friendly_name": "Windows Feedback Hub",
+      "winget_id": "Microsoft.WindowsFeedbackHub",
+      "size_mb": 25,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Phone Link (Your Phone)",
+      "appx_pattern": "yourphone",
+      "friendly_name": "Phone Link",
+      "winget_id": "Microsoft.YourPhone",
+      "size_mb": 60,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Sticky Notes",
+      "appx_pattern": "microsoftstickynotes",
+      "friendly_name": "Microsoft Sticky Notes",
+      "winget_id": "Microsoft.MicrosoftStickyNotes",
+      "size_mb": 25,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Microsoft To Do",
+      "appx_pattern": "todos",
+      "friendly_name": "Microsoft To Do",
+      "winget_id": "Microsoft.Todos",
+      "size_mb": 30,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Windows Sound Recorder",
+      "appx_pattern": "soundrecorder",
+      "friendly_name": "Windows Sound Recorder",
+      "winget_id": "Microsoft.WindowsSoundRecorder",
+      "size_mb": 15,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Windows Alarms and Clock",
+      "appx_pattern": "windowsalarms",
+      "friendly_name": "Windows Alarms & Clock",
+      "winget_id": "Microsoft.WindowsAlarms",
+      "size_mb": 15,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Windows Camera",
+      "appx_pattern": "windowscamera",
+      "friendly_name": "Windows Camera App",
+      "winget_id": "Microsoft.WindowsCamera",
+      "size_mb": 30,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "Power Automate Desktop",
+      "appx_pattern": "powerautomatedesktop",
+      "friendly_name": "Power Automate Desktop",
+      "winget_id": "Microsoft.PowerAutomateDesktop",
+      "size_mb": 110,
+      "publisher": "Microsoft Corporation"
+    },
+    {
+      "name": "OneNote for Windows",
+      "appx_pattern": "onenote",
+      "friendly_name": "OneNote for Windows",
+      "winget_id": "Microsoft.Office.OneNote",
+      "size_mb": 75,
+      "publisher": "Microsoft Corporation"
+    }
+  ]
+}

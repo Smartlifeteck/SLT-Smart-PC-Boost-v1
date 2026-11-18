@@ -1,0 +1,117 @@
+{
+  "packages": [
+    {
+      "key": "a_google_chrome",
+      "id": "Google.Chrome",
+      "name": "Google Chrome",
+      "size_mb": 110,
+      "eta_min": 0.8
+    },
+    {
+      "key": "a_brave_brave",
+      "id": "Brave.Brave",
+      "name": "Brave Browser",
+      "size_mb": 115,
+      "eta_min": 0.8
+    },
+    {
+      "key": "a_microsoft_office",
+      "id": "Microsoft.Office",
+      "name": "Microsoft 365 (Office)",
+      "size_mb": 950,
+      "eta_min": 3.5
+    },
+    {
+      "key": "a_thedocumentfoundation_libreoffice",
+      "id": "TheDocumentFoundation.LibreOffice",
+      "name": "LibreOffice",
+      "size_mb": 340,
+      "eta_min": 1.5
+    },
+    {
+      "key": "a_pdfgear_pdfgear",
+      "id": "PDFgear.PDFgear",
+      "name": "PDFgear (Free Open PDF Editor)",
+      "size_mb": 85,
+      "eta_min": 0.6
+    },
+    {
+      "key": "a_7zip_7zip",
+      "id": "7zip.7zip",
+      "name": "7-Zip",
+      "size_mb": 5,
+      "eta_min": 0.3
+    },
+    {
+      "key": "a_videolan_vlc",
+      "id": "VideoLAN.VLC",
+      "name": "VLC media player",
+      "size_mb": 45,
+      "eta_min": 0.5
+    },
+    {
+      "key": "a_9nksqgp7f2nh",
+      "id": "9NKSQGP7F2NH",
+      "name": "WhatsApp Desktop",
+      "size_mb": 160,
+      "eta_min": 0.9
+    },
+    {
+      "key": "a_anydesksoftwaregmbh_anydesk",
+      "id": "AnyDeskSoftwareGmbH.AnyDesk",
+      "name": "AnyDesk",
+      "size_mb": 8,
+      "eta_min": 0.3
+    },
+    {
+      "key": "a_microsoft_vcredist_2015_x64",
+      "id": "Microsoft.VCRedist.2015+.x64",
+      "name": "Visual C++ Redistributable All-in-One",
+      "size_mb": 25,
+      "eta_min": 0.4
+    },
+    {
+      "key": "a_sharex_sharex",
+      "id": "ShareX.ShareX",
+      "name": "ShareX",
+      "size_mb": 15,
+      "eta_min": 0.4
+    },
+    {
+      "key": "a_voidtools_everything",
+      "id": "voidtools.Everything",
+      "name": "Everything Search",
+      "size_mb": 3,
+      "eta_min": 0.2
+    },
+    {
+      "key": "a_google_googledrive",
+      "id": "Google.GoogleDrive",
+      "name": "Google Drive",
+      "size_mb": 280,
+      "eta_min": 1.2
+    },
+    {
+      "key": "a_rarlab_winrar",
+      "id": "RARLab.WinRAR",
+      "name": "WinRAR",
+      "size_mb": 7,
+      "eta_min": 0.3
+    },
+    {
+      "key": "a_slt_arabic_language_pack",
+      "id": "SLT.ArabicLanguagePack",
+      "name": "Arabic Language Pack (Saudi Keyboard & Fonts)",
+      "size_mb": 35,
+      "eta_min": 0.5
+    },
+    {
+      "key": "a_slt_smart_tools_hub",
+      "id": "SLT.SmartToolsHub",
+      "name": "SLT Smart Tools Hub (Desktop Shortcut)",
+      "size_mb": 2,
+      "eta_min": 0.1
+    }
+  ],
+  "notes": "Smart Life Teck v1.0.0 Essential Package (16 Must-Have Tools including SLT Smart Tools Hub Desktop Shortcut & Arabic Language Pack)."
+}

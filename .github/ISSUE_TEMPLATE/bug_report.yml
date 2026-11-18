@@ -1,0 +1,39 @@
+name: Bug Report
+description: Report a bug or unexpected behavior in SLT Smart PC Boost
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve SLT Smart PC Boost! Please **never** include customer names, phone numbers, full serial numbers, passwords, or `Unattend_*.xml` files in a public issue.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Clear description of the bug and the module/page affected.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Launch RUN_SMART_PC_BOOST.cmd
+        2. Open tab '...'
+        3. Click '...'
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Windows & PowerShell Version
+      placeholder: "e.g., Windows 11 Pro 24H2, Windows PowerShell 5.1"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted Error Log (Optional)
+      description: Paste redacted lines from STARTUP_ERROR.txt if applicable.
+      render: text

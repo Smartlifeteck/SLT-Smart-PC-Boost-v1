@@ -1,0 +1,91 @@
+name: Windows CI — Safety & Integrity Checks
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-test:
+    name: Validate Syntax, Catalogs & Pester 5 Safety Suite
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate JSON configuration and data catalogs
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $jsonFiles = Get-ChildItem -Path .\config, .\data -Filter *.json -Recurse
+          Write-Host "Validating $($jsonFiles.Count) JSON files..."
+          foreach ($file in $jsonFiles) {
+            $null = Get-Content -LiteralPath $file.FullName -Raw | ConvertFrom-Json
+            Write-Host "  OK: $($file.Name)"
+          }
+
+      - name: Validate WPF XAML structure
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          [xml]$xaml = Get-Content -LiteralPath .\ui\Main.xaml -Raw
+          Write-Host "OK: ui\Main.xaml parsed cleanly."
+
+      - name: PowerShell 5.1 AST Syntax Check across all scripts
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $scripts = Get-ChildItem -Path . -Filter *.ps1 -Recurse
+          Write-Host "Parsing AST for $($scripts.Count) PowerShell scripts..."
+          $parseFailures = @()
+          foreach ($script in $scripts) {
+            $tokens = $null
+            $errors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($script.FullName, [ref]$tokens, [ref]$errors)
+            if ($errors -and $errors.Count -gt 0) {
+              foreach ($err in $errors) {
+                $parseFailures += "$($script.FullName):$($err.Extent.StartLineNumber) - $($err.Message)"
+              }
+            }
+          }
+          if ($parseFailures.Count -gt 0) {
+            $parseFailures | ForEach-Object { Write-Error $_ }
+            exit 1
+          }
+          Write-Host "OK: Zero PowerShell AST syntax errors across $($scripts.Count) files."
+
+      - name: Install Pester 5 and PSScriptAnalyzer
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Install-Module -Name Pester -MinimumVersion 5.0.0 -Force -Scope CurrentUser -SkipPublisherCheck
+          Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser -SkipPublisherCheck
+
+      - name: Run Pester 5 Safety & Repository Integrity Tests
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Import-Module Pester -MinimumVersion 5.0.0
+          $config = New-PesterConfiguration
+          $config.Run.Path = '.\tests'
+          $config.Run.Exit = $true
+          $config.Output.Verbosity = 'Detailed'
+          Invoke-Pester -Configuration $config
+
+      - name: Run PSScriptAnalyzer (Error-level check)
+        shell: powershell
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Import-Module PSScriptAnalyzer
+          $issues = Invoke-ScriptAnalyzer -Path . -Recurse -Severity Error
+          if ($issues) {
+            $issues | Format-Table -AutoSize
+            exit 1
+          }
+          Write-Host "OK: Zero Error-level PSScriptAnalyzer findings."

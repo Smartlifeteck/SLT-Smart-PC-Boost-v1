@@ -1,0 +1,248 @@
+﻿{
+  "ai": [
+    [
+      "ChatGPT",
+      "https://chatgpt.com/"
+    ],
+    [
+      "Claude AI",
+      "https://claude.ai/"
+    ],
+    [
+      "Google Gemini",
+      "https://gemini.google.com/"
+    ],
+    [
+      "Grok xAI",
+      "https://grok.com/"
+    ],
+    [
+      "Perplexity",
+      "https://www.perplexity.ai/"
+    ],
+    [
+      "Microsoft Copilot",
+      "https://copilot.microsoft.com/"
+    ],
+    [
+      "Meta AI",
+      "https://www.meta.ai/"
+    ],
+    [
+      "DeepSeek",
+      "https://chat.deepseek.com/"
+    ],
+    [
+      "Mistral Le Chat",
+      "https://chat.mistral.ai/"
+    ],
+    [
+      "GitHub Copilot",
+      "https://github.com/features/copilot"
+    ],
+    [
+      "Hugging Face",
+      "https://huggingface.co/"
+    ],
+    [
+      "Midjourney",
+      "https://www.midjourney.com/"
+    ],
+    [
+      "Google NotebookLM",
+      "https://notebooklm.google.com/"
+    ],
+    [
+      "Stable Diffusion",
+      "https://stability.ai/"
+    ],
+    [
+      "Leonardo AI",
+      "https://leonardo.ai/"
+    ],
+    [
+      "Runway ML",
+      "https://runwayml.com/"
+    ],
+    [
+      "ElevenLabs",
+      "https://elevenlabs.io/"
+    ],
+    [
+      "Notion AI",
+      "https://www.notion.so/product/ai"
+    ],
+    [
+      "Google AI Studio",
+      "https://aistudio.google.com/"
+    ],
+    [
+      "Canva Magic Studio",
+      "https://www.canva.com/magic/"
+    ]
+  ],
+  "social": [
+    [
+      "YouTube",
+      "https://www.youtube.com/"
+    ],
+    [
+      "TikTok",
+      "https://www.tiktok.com/"
+    ],
+    [
+      "X Twitter",
+      "https://x.com/"
+    ],
+    [
+      "LinkedIn",
+      "https://www.linkedin.com/"
+    ],
+    [
+      "Snapchat",
+      "https://www.snapchat.com/"
+    ],
+    [
+      "WhatsApp Web",
+      "https://web.whatsapp.com/"
+    ],
+    [
+      "Telegram",
+      "https://web.telegram.org/"
+    ],
+    [
+      "Pinterest",
+      "https://www.pinterest.com/"
+    ],
+    [
+      "Reddit",
+      "https://www.reddit.com/"
+    ],
+    [
+      "Discord",
+      "https://discord.com/"
+    ],
+    [
+      "Twitch",
+      "https://www.twitch.tv/"
+    ],
+    [
+      "Hootsuite",
+      "https://www.hootsuite.com/"
+    ],
+    [
+      "Buffer",
+      "https://buffer.com/"
+    ],
+    [
+      "CapCut",
+      "https://www.capcut.com/"
+    ],
+    [
+      "Metricool Social",
+      "https://metricool.com/"
+    ],
+    [
+      "Haraj KSA Market",
+      "https://haraj.com.sa/"
+    ],
+    [
+      "Later",
+      "https://later.com/"
+    ],
+    [
+      "YouTube Studio",
+      "https://studio.youtube.com/"
+    ],
+    [
+      "Google Meet",
+      "https://meet.google.com/"
+    ],
+    [
+      "Zoom",
+      "https://zoom.us/"
+    ]
+  ],
+  "websites": [
+    [
+      "Google Docs (Online Word)",
+      "https://docs.google.com/document/create"
+    ],
+    [
+      "Google Sheets (Online Excel)",
+      "https://docs.google.com/spreadsheets/create"
+    ],
+    [
+      "Google Slides (Online PowerPoint)",
+      "https://docs.google.com/presentation/create"
+    ],
+    [
+      "Microsoft 365 Web",
+      "https://m365.cloud.microsoft/"
+    ],
+    [
+      "AutoCAD Web",
+      "https://web.autocad.com/"
+    ],
+    [
+      "ShareCAD DWG Viewer",
+      "https://sharecad.org/"
+    ],
+    [
+      "Onshape Cloud CAD",
+      "https://www.onshape.com/en/"
+    ],
+    [
+      "Tinkercad 3D",
+      "https://www.tinkercad.com/"
+    ],
+    [
+      "Sejda PDF Editor",
+      "https://www.sejda.com/pdf-editor"
+    ],
+    [
+      "PDF24 Online Tools",
+      "https://tools.pdf24.org/en/"
+    ],
+    [
+      "iLovePDF",
+      "https://www.ilovepdf.com/"
+    ],
+    [
+      "Photopea Image Editor",
+      "https://www.photopea.com/"
+    ],
+    [
+      "Canva Web Design",
+      "https://www.canva.com/"
+    ],
+    [
+      "Photoroom Background Remover",
+      "https://www.photoroom.com/tools/background-remover"
+    ],
+    [
+      "Microsoft Clipchamp",
+      "https://clipchamp.com/en/video-editor/"
+    ],
+    [
+      "123Apps Studio",
+      "https://123apps.com/"
+    ],
+    [
+      "TinyWow",
+      "https://tinywow.com/"
+    ],
+    [
+      "Draw.io Diagrams",
+      "https://app.diagrams.net/"
+    ],
+    [
+      "PairDrop File Transfer",
+      "https://pairdrop.net/"
+    ],
+    [
+      "Google Colab",
+      "https://colab.research.google.com/"
+    ]
+  ]
+}

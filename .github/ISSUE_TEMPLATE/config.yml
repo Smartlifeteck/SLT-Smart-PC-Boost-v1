@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security Vulnerability Report (Private)
+    url: https://www.smartlifeteck.com
+    about: Please email smartlifeteck@gmail.com or info@smartlifeteck.com instead of opening a public issue for security bugs.
+  - name: Smart Life Teck Software Hub
+    url: https://smartlifeteck.com/software-hub/
+    about: Official resources, updates, and technician training tools from Smart Life Teck.

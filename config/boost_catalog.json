@@ -1,0 +1,474 @@
+{
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "TempCleanup",
+      "icon": "[Clean]",
+      "color": "#1E88E5",
+      "title": "Temporary Files & Cache Cleanup",
+      "subtitle": "Cleaning user temp, system cache, crash dumps & update leftovers"
+    },
+    {
+      "id": "StorageSSD",
+      "icon": "[SSD]",
+      "color": "#00897B",
+      "title": "SSD, Disk & File System Speed",
+      "subtitle": "Optimizing NTFS timestamps, SSD TRIM & disk I/O responsiveness"
+    },
+    {
+      "id": "NetworkMemory",
+      "icon": "[RAM]",
+      "color": "#0284C7",
+      "title": "RAM, Network & Multimedia Latency",
+      "subtitle": "Freeing standby RAM, tuning SvcHost split & reducing network latency"
+    },
+    {
+      "id": "StartupApps",
+      "icon": "[Boot]",
+      "color": "#00ACC1",
+      "title": "Startup & Boot Acceleration",
+      "subtitle": "Zero boot delay, fast shutdown & startup bloatware control"
+    },
+    {
+      "id": "BackgroundActivity",
+      "icon": "[Bg]",
+      "color": "#3949AB",
+      "title": "Background Activity & Services",
+      "subtitle": "Stopping background RAM drain, browser boost & heavy services"
+    },
+    {
+      "id": "VisualEffects",
+      "icon": "[UI]",
+      "color": "#8E24AA",
+      "title": "Visual Effects & Explorer Speed",
+      "subtitle": "Instant menus, GPU scheduling & lag-free File Explorer"
+    },
+    {
+      "id": "PrivacySuggestions",
+      "icon": "[Priv]",
+      "color": "#5E35B1",
+      "title": "Privacy, Telemetry & Ad Blocker",
+      "subtitle": "Blocking Windows ads, Copilot/Bing bloat & diagnostic tracking"
+    },
+    {
+      "id": "OptionalApps",
+      "icon": "[Apps]",
+      "color": "#FB8C00",
+      "title": "Optional Bloatware Removal",
+      "subtitle": "Removing unnecessary pre-installed bloatware (Ultra/Extreme)"
+    },
+    {
+      "id": "PowerBattery",
+      "icon": "[Pwr]",
+      "color": "#43A047",
+      "title": "Power, CPU Priority & Thermal Care",
+      "subtitle": "Foreground CPU priority, Game Mode & Modern Standby battery saver"
+    },
+    {
+      "id": "WindowsUpdate",
+      "icon": "[Upd]",
+      "color": "#039BE5",
+      "title": "Windows Update & Bandwidth Control",
+      "subtitle": "Stopping P2P upload drain & managing background update restarts"
+    }
+  ],
+  "tweaks": [
+    {
+      "id": "Tweak_UserTemp",
+      "name": "Clean User Temporary Files & App Cache",
+      "category": "TempCleanup",
+      "description": "Cleans only unlocked user temporary files older than 7 days. Personal documents, downloads, browser profiles, and passwords are not touched.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": false
+    },
+    {
+      "id": "Tweak_SystemTemp",
+      "name": "Clean Old Windows System Temp Files",
+      "category": "TempCleanup",
+      "description": "Cleans only Windows\\Temp files older than 7 days. Prefetch and Windows Update caches are preserved.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": false
+    },
+    {
+      "id": "Tweak_BrowserUpdateCache",
+      "name": "Clean Crash Dumps & DirectX Shader Cache",
+      "category": "TempCleanup",
+      "description": "Cleans selected Windows Error Reporting crash dumps and Direct3D shader cache files. Windows Update download files are preserved.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": false
+    },
+    {
+      "id": "Tweak_NtfsLastAccess",
+      "name": "Disable NTFS Last-Access Disk Write Overhead",
+      "category": "StorageSSD",
+      "description": "Sets NtfsDisableLastAccessUpdate=1 and disables 8.3 legacy short-name creation to reduce SSD wear and speed up folder loading.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_SsdTrimHibernation",
+      "name": "Verify SSD TRIM & Optimize File System Memory Cache",
+      "category": "StorageSSD",
+      "description": "Ensures SSD TRIM (DisableDeleteNotify=0) is active and sets NtfsMemoryUsage=2 for faster file system caching.",
+      "risk": "Safe",
+      "profiles": [
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_RamWorkingSet",
+      "name": "Flush Idle RAM Working Sets & Tune SvcHost Grouping",
+      "category": "NetworkMemory",
+      "description": "Matches SvcHostSplitThresholdInKB to physical RAM (reducing 70+ svchost processes) and trims idle background process memory.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_NetworkLatency",
+      "name": "Disable Network Throttling & Flush Stale DNS Cache",
+      "category": "NetworkMemory",
+      "description": "Sets NetworkThrottlingIndex=FFFFFFFF, SystemResponsiveness=10 for smooth video/audio streaming, and flushes DNS cache.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_GpuHwScheduling",
+      "name": "Enable Hardware GPU Scheduling & Disable GameDVR Capture",
+      "category": "NetworkMemory",
+      "description": "Requests Hardware-Accelerated GPU Scheduling and disables background GameDVR capture. Compatibility varies by GPU driver; revert if graphics issues appear.",
+      "risk": "Moderate",
+      "profiles": [
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_StartupDelay",
+      "name": "Zero Startup Delay (Instant Desktop Boot)",
+      "category": "StartupApps",
+      "description": "Removes the artificial 10-second Windows desktop startup delay (StartupDelayInMSec = 0) so apps load immediately.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_FastShutdown",
+      "name": "Fast Shutdown & Auto-Close Hung Apps (2000ms)",
+      "category": "StartupApps",
+      "description": "Shortens Windows shutdown timeouts and enables automatic closure of hung apps. This may close applications before they save work; review the warning and save all files first.",
+      "risk": "High",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_StartupAudit",
+      "name": "Disable Non-Essential Startup Bloat (OneDrive/Teams/Cortana)",
+      "category": "StartupApps",
+      "description": "Disables known non-essential auto-start entries (OneDrive, Teams, Cortana, Spotify) while preserving audio, touchpad, and security drivers.",
+      "risk": "Moderate",
+      "profiles": [
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_EdgeBackground",
+      "name": "Stop Microsoft Edge Startup Boost & Background RAM Drain",
+      "category": "BackgroundActivity",
+      "description": "Stops Microsoft Edge from running background processes after the browser is closed.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_BackgroundApps",
+      "name": "Restrict Background Store Apps Activity",
+      "category": "BackgroundActivity",
+      "description": "Prevents unused Microsoft Store apps from waking up in the background and consuming RAM and battery.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_TelemetryTasks",
+      "name": "Disable Diagnostic & Telemetry Background Tasks",
+      "category": "BackgroundActivity",
+      "description": "Reduces Windows diagnostic data collection (AllowTelemetry=0) and disables background Customer Experience tasks.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_HeavyServices",
+      "name": "Stop Heavy Background RAM Services (SysMain, Search Indexing, Maps)",
+      "category": "BackgroundActivity",
+      "description": "Sets SysMain (Superfetch), Windows Search Indexing, and MapsBroker to Manual/Stopped for 2GB/4GB RAM laptops to eliminate 100% disk/RAM spikes.",
+      "risk": "High",
+      "profiles": [
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_MenuSpeed",
+      "name": "Instant Menu, Mouse & Taskbar End-Task Speed",
+      "category": "VisualEffects",
+      "description": "Sets MenuShowDelay to 20ms, enables Taskbar Right-Click 'End Task', opens File Explorer to This PC, and shows file extensions.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_ExplorerSpeed",
+      "name": "Lag-Free File Explorer & Block Explorer Sync Ads",
+      "category": "VisualEffects",
+      "description": "Disables Explorer automatic network crawling (NoNetCrawling=1), hides OneDrive sync banner ads, and sets HungAppTimeout=2000ms.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_VisualBalanced",
+      "name": "Disable Heavy Window Transparency & Blur Effects",
+      "category": "VisualEffects",
+      "description": "Turns off heavy acrylic blur and window transparency to free up integrated GPU memory while keeping crisp font smoothing.",
+      "risk": "Safe",
+      "profiles": [
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_VisualExtreme",
+      "name": "Ultra-Light Visual Mode (2GB/4GB RAM Maximum Speed)",
+      "category": "VisualEffects",
+      "description": "Disables non-essential desktop animations and fade effects while keeping ClearType smooth fonts readable.",
+      "risk": "Moderate",
+      "profiles": [
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_ConsumerAds",
+      "name": "Block Auto-Installing Bloatware & Start/Lock Screen Ads",
+      "category": "PrivacySuggestions",
+      "description": "Disables Windows Consumer Features, Start Menu suggestions, Lock Screen tips, and Settings promotional banners.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_CopilotBing",
+      "name": "Disable Copilot, Recall, Widgets & Start Menu Bing Search",
+      "category": "PrivacySuggestions",
+      "description": "Disables slow web results in Start Menu search, hides the RAM-heavy Taskbar Widgets feed, and disables Windows Recall/Copilot.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_ActivityPrivacy",
+      "name": "Disable Activity History, Advertising ID & WPBT BIOS Bloat",
+      "category": "PrivacySuggestions",
+      "description": "Disables Activity History uploads and Advertising ID. Also blocks WPBT execution, which may affect some OEM-provided platform components; review before applying.",
+      "risk": "Moderate",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_TelemetryServices",
+      "name": "Stop Connected Telemetry & Error Reporting Services",
+      "category": "PrivacySuggestions",
+      "description": "Sets DiagTrack, dmwappushservice, and WerSvc to Manual/Stopped to eliminate background telemetry disk and network spikes.",
+      "risk": "Moderate",
+      "profiles": [
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_RemoveXboxGaming",
+      "name": "Remove Unused Xbox & Gaming Overlay Bloatware",
+      "category": "OptionalApps",
+      "description": "Removes non-essential Xbox consumer overlays (XboxGamingOverlay, XboxApp, Xbox.TCUI, XboxSpeechToTextOverlay) to free RAM.",
+      "risk": "Moderate",
+      "profiles": [
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": false
+    },
+    {
+      "id": "Tweak_RemovePromoApps",
+      "name": "Remove Promotional & Consumer Bloatware Apps",
+      "category": "OptionalApps",
+      "description": "Removes preinstalled promotional apps (BingNews, BingWeather, SolitaireCollection, Clipchamp, FeedbackHub, GetHelp, Todos).",
+      "risk": "Moderate",
+      "profiles": [
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": false
+    },
+    {
+      "id": "Tweak_RemoveExtremeApps",
+      "name": "Maximum Optional Store App Cleanup (2GB/4GB RAM Light Mode)",
+      "category": "OptionalApps",
+      "description": "Removes additional optional consumer packages (Maps, People, ZuneVideo, MixedReality, 3DViewer, QuickAssist) while keeping Store, Calculator, Photos, and Notepad intact.",
+      "risk": "High",
+      "profiles": [
+        "Extreme"
+      ],
+      "reversible": false
+    },
+    {
+      "id": "Tweak_DefenderControl",
+      "name": "Reduce / Disable Windows Defender Real-Time Monitoring (2GB/4GB Opt-In)",
+      "category": "OptionalApps",
+      "description": "Applies policy to disable Defender real-time monitoring on ultra-low RAM PCs (only when explicitly confirmed; respects Tamper Protection).",
+      "risk": "High",
+      "profiles": [
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_PowerPlan",
+      "name": "Activate High-Responsiveness Power & CPU Priority",
+      "category": "PowerBattery",
+      "description": "Enables Windows Game Mode hardware scheduling, sets Win32PrioritySeparation for responsive foreground apps, and checks disk space.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_LaptopStandby",
+      "name": "Stop Modern Standby Battery Drain & Network Wake",
+      "category": "PowerBattery",
+      "description": "Prevents network activity during Modern Standby so laptops do not overheat or drain battery while closed.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_DeliveryOpt",
+      "name": "Disable Windows Update P2P Bandwidth Sharing",
+      "category": "WindowsUpdate",
+      "description": "Sets Delivery Optimization DODownloadMode=0 so Windows never uses your internet or disk to upload updates to other PCs.",
+      "risk": "Safe",
+      "profiles": [
+        "Normal",
+        "Ultra",
+        "Extreme"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_UpdateManual",
+      "name": "Windows Update - Manual Control Only (Notify Before Download)",
+      "category": "WindowsUpdate",
+      "description": "Configures Windows Update policy (AUOptions=2) so updates never download or restart automatically during work, while manual checking stays available.",
+      "risk": "Moderate",
+      "profiles": [
+        "Ultra"
+      ],
+      "reversible": true
+    },
+    {
+      "id": "Tweak_UpdateSuppress",
+      "name": "Suppress Automatic Windows & Store Background Updates",
+      "category": "WindowsUpdate",
+      "description": "Configures NoAutoUpdate=1 and Store AutoDownload=2 to stop background update CPU/disk usage on low-resource laptops (manual check remains available).",
+      "risk": "High",
+      "profiles": [
+        "Extreme"
+      ],
+      "reversible": true
+    }
+  ]
+}

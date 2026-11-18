@@ -1,0 +1,19 @@
+name: Feature Request
+description: Suggest a safe enhancement, catalog addition, or educational improvement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Training Need
+      description: What workflow or learning goal does this feature help solve?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the feature and how it preserves Phase 1 safety invariants (reversibility, no silent destructive changes).
+    validations:
+      required: true
