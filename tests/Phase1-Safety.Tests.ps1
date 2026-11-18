@@ -1,14 +1,14 @@
-# Pester 5 static safety checks for the Phase 1 hardening patch.
-$ProjectRoot = Split-Path -Parent $PSScriptRoot
-$Init = Get-Content -LiteralPath (Join-Path $ProjectRoot 'core\00-Initialize.ps1') -Raw
-$System = Get-Content -LiteralPath (Join-Path $ProjectRoot 'core\10-System.ps1') -Raw
-$Hardware = Get-Content -LiteralPath (Join-Path $ProjectRoot 'core\11-HardwareInspection.ps1') -Raw
-$HardwarePage = Get-Content -LiteralPath (Join-Path $ProjectRoot 'pages\06-HardwareInspection.ps1') -Raw
-$BackupPage = Get-Content -LiteralPath (Join-Path $ProjectRoot 'pages\05-Backup.ps1') -Raw
-$PackageWorker = Get-Content -LiteralPath (Join-Path $ProjectRoot 'tools\Run-SLT-Packages.ps1') -Raw
-$BoostPage = Get-Content -LiteralPath (Join-Path $ProjectRoot 'pages\04-Boost.ps1') -Raw
-$Startup = Get-Content -LiteralPath (Join-Path $ProjectRoot 'START_SLT_DIAGNOSTIC.ps1') -Raw
-
+﻿BeforeAll {
+    $ProjectRoot = Split-Path -Parent $PSScriptRoot
+    $Init = Get-Content -LiteralPath (Join-Path $ProjectRoot 'core\00-Initialize.ps1') -Raw
+    $System = Get-Content -LiteralPath (Join-Path $ProjectRoot 'core\10-System.ps1') -Raw
+    $Hardware = Get-Content -LiteralPath (Join-Path $ProjectRoot 'core\11-HardwareInspection.ps1') -Raw
+    $HardwarePage = Get-Content -LiteralPath (Join-Path $ProjectRoot 'pages\06-HardwareInspection.ps1') -Raw
+    $BackupPage = Get-Content -LiteralPath (Join-Path $ProjectRoot 'pages\05-Backup.ps1') -Raw
+    $PackageWorker = Get-Content -LiteralPath (Join-Path $ProjectRoot 'tools\Run-SLT-Packages.ps1') -Raw
+    $BoostPage = Get-Content -LiteralPath (Join-Path $ProjectRoot 'pages\04-Boost.ps1') -Raw
+    $Startup = Get-Content -LiteralPath (Join-Path $ProjectRoot 'START_SLT_DIAGNOSTIC.ps1') -Raw
+}
 Describe 'SLT Smart PC Boost Phase 1 safety invariants' {
     It 'does not contain the previous hardcoded staff PIN or default password' {
         $Hardware | Should -Not -Match '2580|SLT@2026'
@@ -105,3 +105,4 @@ Describe 'SLT Smart PC Boost Phase 1 safety invariants' {
         $System | Should -Match '\$remaining\[\$p\.Name\]'
     }
 }
+

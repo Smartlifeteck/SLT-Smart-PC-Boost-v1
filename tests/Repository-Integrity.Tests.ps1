@@ -1,6 +1,6 @@
-# Pester 5 repository integrity, catalog schema, XAML, and PowerShell AST tests.
-$ProjectRoot = Split-Path -Parent $PSScriptRoot
-
+﻿BeforeAll {
+    $ProjectRoot = Split-Path -Parent $PSScriptRoot
+}
 Describe 'SLT Smart PC Boost Open-Source Repository Integrity' {
     It 'includes all required open-source governance and documentation files' {
         $requiredFiles = @(
@@ -65,3 +65,4 @@ Describe 'SLT Smart PC Boost Open-Source Repository Integrity' {
         $brand.Company | Should -Be 'Smart Life Teck'
     }
 }
+
