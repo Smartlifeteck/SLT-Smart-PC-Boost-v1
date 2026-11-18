@@ -203,13 +203,14 @@ function Test-SLTImagePreflight {
     Log-SLT "Preflight: driver issues $($issues.Count), pending restart $($pending.Count); report $file"
     return $file
 }
-function New-SLTUnattend([ValidateSet('Generic','Model')][string]$Type,[string]$Username,[string]$DisplayName,[string]$Password,[bool]$AutoLogon) {
+function New-SLTUnattend([ValidateSet('Generic','Model')][string]$Type,[string]$Username,[string]$DisplayName,[SecureString]$Password,[bool]$AutoLogon) {
+    $plainPw = if ($null -ne $Password) { [System.Net.NetworkCredential]::new('', $Password).Password } else { '' }
     # Generic alag hardware ke liye; Model mode same hardware per tested drivers retain karta hai.
     Need-SLTAdmin
     if($Username -notmatch '^[A-Za-z][A-Za-z0-9._-]{1,19}$'){throw 'Username: 2-20 Latin letters/digits; must start with letter.'}
-    if([string]::IsNullOrWhiteSpace($Password) -or $Password.Length -lt 12){throw 'A unique temporary password of at least 12 characters is required.'}
+    if([string]::IsNullOrWhiteSpace($plainPw) -or $plainPw.Length -lt 12){throw 'A unique temporary password of at least 12 characters is required.'}
     if([string]::IsNullOrWhiteSpace($DisplayName)){throw 'Display name is required.'}
-    $u=[Security.SecurityElement]::Escape($Username);$d=[Security.SecurityElement]::Escape($DisplayName);$pw=[Security.SecurityElement]::Escape($Password)
+    $u=[Security.SecurityElement]::Escape($Username);$d=[Security.SecurityElement]::Escape($DisplayName);$pw=[Security.SecurityElement]::Escape($plainPw)
     $persist=if($Type -eq 'Model'){'true'}else{'false'}
     $auto=''
     if($AutoLogon){$auto="<AutoLogon><Username>$u</Username><Password><Value>$pw</Value><PlainText>true</PlainText></Password><Enabled>true</Enabled><LogonCount>1</LogonCount></AutoLogon>"}
