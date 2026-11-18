@@ -739,7 +739,7 @@ function Invoke-SLTBRRunStage([string]$StageId) {
                         if (-not $existingIsSlt) { throw 'An external Panther\unattend.xml already exists. It was preserved; back it up and move it manually before selecting Copy to Panther.' }
                     }
                 }
-                try { $xmlPath = New-SLTUnattend $uMode $uName $uDisp (ConvertTo-SecureString $uPass -AsPlainText -Force) $false }
+                try { $xmlPath = New-SLTUnattend $uMode $uName $uDisp $script:BRUnattendPassBox.SecurePassword $false }
                 finally { if ($null -ne $script:BRUnattendPassBox) { $script:BRUnattendPassBox.Clear() }; $uPass = $null }
                 if ($script:BRChecks['af5']) {
                     try {
